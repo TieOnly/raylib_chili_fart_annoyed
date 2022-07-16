@@ -1,4 +1,5 @@
 #pragma once
+#include "raylib.h"
 #include "Vec2.h"
 
 class RectF
@@ -10,6 +11,7 @@ public:
     RectF(const Vec2& topLeft, const float& width, const float& height);
     static RectF FromCenter(const Vec2& center, const float& halfWidth, const float& halfHeight);
     bool IsOverLapping(const RectF& other) const;
+    void DrawRectF(const Color& color) const;
 public:
     float left;
     float top;

@@ -15,7 +15,7 @@ public:
     void Draw() const;
 private:
     Vec2 pos;
-    static constexpr float speed = 300.0f;
+    static constexpr float speed = 400.0f;
     static constexpr float halfWidth = 60.0f;
     static constexpr float halfHeight = 20.0f;
     Color color;

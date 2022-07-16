@@ -31,3 +31,7 @@ bool RectF::IsOverLapping(const RectF& other) const
     return right > other.left && bottom > other.top 
         && left < other.right && top < other.bottom;
 }
+void RectF::DrawRectF(const Color& color) const
+{
+    DrawRectangle((float)left, (float)top, int(right - left), int(bottom - top), color);
+}
