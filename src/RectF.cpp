@@ -21,6 +21,11 @@ RectF::RectF(const Vec2& topLeft, const float& width, const float& height)
 {
 
 }
+RectF RectF::FromCenter(const Vec2& center, const float& halfWidth, const float& halfHeight)
+{
+    Vec2 toAngle{ halfWidth, halfHeight };
+    return RectF{ center - toAngle, center + toAngle};
+}
 bool RectF::IsOverLapping(const RectF& other) const
 {
     return right > other.left && bottom > other.top 

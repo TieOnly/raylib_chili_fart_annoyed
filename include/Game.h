@@ -1,6 +1,11 @@
 #pragma once
 #include <string>
+#include "Settings.h"
 #include "raylib.h"
+#include "Vec2.h"
+#include "FrameTimer.h"
+#include "Ball.h"
+
 
 class Game
 {
@@ -15,5 +20,7 @@ private:
     void Update();
     void Draw();
 
-    Texture2D player;
+    FrameTimer ft;
+    Ball ball;
+    RectF wall;
 };
