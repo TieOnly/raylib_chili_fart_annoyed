@@ -1,15 +1,21 @@
 #pragma once
 #include "raylib.h"
-#include "Vec2.h"
+#include "RectF.h"
+#include "Ball.h"
 
 
 class Brick
 {
 public:
-    Brick(const Vec2& pos_in, const Vec2& widthHeight_in, Color color_in);
+    Brick() = default;
+    Brick(const Vec2 center_in, Color color_in);
+    bool DoBallCollision(Ball& ball);
+    RectF GetRectangle() const;
     void Draw() const;
 private:
-    Vec2 pos;
-    Vec2 widthHeight;
+    Vec2 center;
+    static constexpr float halfWidth = 20.0f;
+    static constexpr float halfHeight = 10.0f;
     Color color;
+    bool destroyed = false;
 };

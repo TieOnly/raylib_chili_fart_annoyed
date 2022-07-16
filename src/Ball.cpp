@@ -34,7 +34,11 @@ void Ball::DoWallCollison( const RectF& wall)
         collided = true;
     }
 }
-RectF Ball::GetRectangle()
+Vec2 Ball::GetVelocity() const
+{
+    return vel;
+}
+RectF Ball::GetRectangle() const
 {
     return RectF::FromCenter(center, radius, radius);
 }

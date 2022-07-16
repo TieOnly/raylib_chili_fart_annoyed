@@ -11,11 +11,12 @@ public:
     void DoWallCollison( const RectF& wall);
     void ReBoundX();
     void ReBoundY();
-    RectF GetRectangle();
+    Vec2 GetVelocity() const;
+    RectF GetRectangle() const;
     void Draw() const;
 private:
     Vec2 center;
     Vec2 vel;
-    static constexpr float radius = 6.0f;
+    static constexpr float radius = 8.0f;
     bool collided = false;
 };

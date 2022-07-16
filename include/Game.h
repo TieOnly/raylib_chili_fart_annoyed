@@ -5,7 +5,8 @@
 #include "Vec2.h"
 #include "FrameTimer.h"
 #include "Ball.h"
-
+#include "Paddle.h"
+#include "Brick.h"
 
 class Game
 {
@@ -23,4 +24,13 @@ private:
     FrameTimer ft;
     Ball ball;
     RectF wall;
+    Paddle paddle;
+
+    static constexpr int nBrickY = 4;
+    static constexpr int nBrickX = 20;
+    static constexpr float brickWidth = 40.0f;
+    static constexpr float brickHeight = 20.0f;
+    Color colorBricks[4] = {RED, GREEN, SKYBLUE, RAYWHITE};
+    Brick bricks[nBrickY * nBrickX];
+
 };
