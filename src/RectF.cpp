@@ -1,3 +1,4 @@
+#include <assert.h>
 #include "RectF.h"
 
 RectF::RectF(float left_in, float top_in, float right_in, float bottom_in)
@@ -33,5 +34,6 @@ bool RectF::IsOverLapping(const RectF& other) const
 }
 void RectF::DrawRectF(const Color& color) const
 {
+    assert(left >= 0 && right <= (float)GetScreenWidth() && top >= 0 && bottom <= (float)GetScreenHeight());
     DrawRectangle((float)left, (float)top, int(right - left), int(bottom - top), color);
 }
